@@ -146,7 +146,7 @@ class Agent:
 
         return action.detach().cpu().numpy()
 
-    def learn(self, n_episodes, alpha=1e-4, gamma=.9):
+    def learn(self, n_episodes, alpha=1e-4, gamma=.9, model_name="policy_model"):
         '''
         REINFORCE algorithm implementation for agent learning.
         '''
@@ -232,7 +232,7 @@ class Agent:
             plt.pause(0.01)
 
         # 3. Save learned model
-        torch.save(self.policy.state_dict(), 'policy_model.pt')
-        print('Model saved to policy_model.pt')
+        torch.save(self.policy.state_dict(), model_name + '.pt')
+        print('Model saved to {model_name}.pt')
 
         plt.ioff()
