@@ -9,7 +9,7 @@ print('\033[32m[Training]\033[0m')
 
 env = gym.make('Pendulum-v1')
 agent = Agent(env)
-agent.learn(n_episodes=5, gamma=.5)
+agent.learn(n_episodes=5_000, gamma=.5)
 
 ################################# EVALUATION #################################
 
